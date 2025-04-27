@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.header_style{
+    background-color: #FF2D20;
+    color: white;
+}
