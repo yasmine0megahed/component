@@ -69,9 +69,9 @@ class PdfTranslateController extends Controller
         $popplerPath = base_path('tools/poppler-24.08.0/Library/bin/pdftoppm.exe');
         $command = "$popplerPath -f 1 -l 1 -jpeg \"$pdfPath\" \"$outputPath\"";
         exec($command);
-        if (!file_exists($outputPath)) {
-            return response()->json(['error' => "Image not found at $outputPath"], 500);
-        }
+        // if (!file_exists($outputPath)) {
+        //     return response()->json(['error' => "Image not found at $outputPath"], 500);
+        // }
         $imagePath = $outputPath . '-1.jpg';
 
         // OCR using external API
