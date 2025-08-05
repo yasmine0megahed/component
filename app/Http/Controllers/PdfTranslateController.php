@@ -43,10 +43,11 @@ class PdfTranslateController extends Controller
     public function extractTextFromImage($imagePath)
     {
         $text = (new TesseractOCR($imagePath))
+        ->executable(base_path('tools/Tesseract-OCR/tesseract.exe'))
             ->lang('eng') // يمكنك استخدام 'ara' للغة العربية
             ->run();
-
         return $text;
+      
     }
     public function translateText2(Request $request)
     {
